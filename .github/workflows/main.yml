@@ -114,6 +114,12 @@ jobs:
           ref: l4d2
           path: hl2sdk-l4d2
 
+      - name: Checking out Imatchext
+        uses: actions/checkout@v2
+        with:
+          repository: shqke/imatchext
+          path: /
+
       - name: Checking out own repository
         uses: actions/checkout@v2
         with:
