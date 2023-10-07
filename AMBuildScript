@@ -156,6 +156,7 @@ class ExtensionConfig(object):
       '-msse',
       '-m32',
       '-fvisibility=hidden',
+      '-Wno-implicit-int-float-conversion',
     ]
     cxx.cxxflags += [
       '-std=c++14',
