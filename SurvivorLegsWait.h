@@ -26,7 +26,7 @@ private:
 	CountdownTimer m_waitTimer;
 };
 
-inline SurvivorLegsWait::SurvivorLegsWait( float duration = 0.0f )
+inline SurvivorLegsWait::SurvivorLegsWait( float duration )
 {
 	m_flDuration = duration;
 }
