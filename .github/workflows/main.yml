@@ -79,6 +79,13 @@ jobs:
           path: sourcemod
           submodules: recursive
 
+      - name: Checking out hl2sdk-l4d2
+        uses: actions/checkout@v2
+        with:
+          repository: alliedmodders/hl2sdk
+          ref: l4d2
+          path: hl2sdk-l4d2
+      
       - name: Checkout Project
         uses: actions/checkout@v3
         with:
@@ -89,7 +96,7 @@ jobs:
         shell: bash
         run: |
           mkdir build && cd build
-          python ../configure.py --enable-optimize
+          python ../configure.py --enable-optimize --sdk=l4d2
           ambuild
 
       - name: Upload artifact
