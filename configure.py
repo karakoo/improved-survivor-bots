@@ -27,7 +27,7 @@ parser.options.add_argument('--mysql64-path', type=str, dest='mysql64_path', def
                        help='Path to 64-bit MySQL 5')
 parser.options.add_argument('--mms-path', type=str, dest='mms_path', default=None,
                        help='Path to Metamod:Source')
-parser.options.add_option('--sm-path', type=str, dest='sm_path', default=None,
+parser.options.add_argument('--sm-path', type=str, dest='sm_path', default=None,
                        help='Path to SourceMod')
 parser.options.add_argument('--enable-debug', action='store_const', const='1', dest='debug',
                        help='Enable debugging symbols')
