@@ -96,7 +96,7 @@ jobs:
         shell: bash
         run: |
           mkdir build && cd build
-          python ../configure.py --enable-optimize --sdk=l4d2
+          python ../configure.py --enable-optimize --sdks=l4d2
           ambuild
 
       - name: Upload artifact
