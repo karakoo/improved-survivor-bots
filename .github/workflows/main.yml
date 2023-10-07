@@ -2,7 +2,7 @@ name: Build Exts
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   build:
@@ -79,13 +79,6 @@ jobs:
           path: sourcemod
           submodules: recursive
 
-      - name: Checkout hl2sdk-csgo
-        uses: actions/checkout@v3
-        with:
-          repository: Wend4r/hl2sdk
-          ref: csgo
-          path: hl2sdk-csgo
-
       - name: Checkout Project
         uses: actions/checkout@v3
         with:
@@ -96,7 +89,7 @@ jobs:
         shell: bash
         run: |
           mkdir build && cd build
-          python ../configure.py --enable-optimize --sdks=csgo
+          python ../configure.py --enable-optimize
           ambuild
 
       - name: Upload artifact
