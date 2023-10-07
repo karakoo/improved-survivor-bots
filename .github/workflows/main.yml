@@ -136,5 +136,5 @@ jobs:
       - name: Uploading package
         uses: actions/upload-artifact@v2
         with:
-          name: Improved-Survivor-Bots-mm${{ matrix.mm_version }}-sm${{ matrix.sm_version }}-${{ matrix.os_short }}-${{ env.GITHUB_SHA_SHORT }}
-          path: Improved-Survivor-Bots/build/package
+          name: improved-survivor-bots-mm${{ matrix.mm_version }}-sm${{ matrix.sm_version }}-${{ matrix.os_short }}-${{ env.GITHUB_SHA_SHORT }}
+          path: improved-survivor-bots/build/package
