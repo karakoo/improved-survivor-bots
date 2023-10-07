@@ -16,7 +16,7 @@ on:
 
 jobs:
   build:
-    name: build with ${{ matrix.team_size }}players, sm${{ matrix.sm_version }} on ${{ matrix.os_short }}
+    name: build with mm${{ matrix.mm_version }} sm${{ matrix.sm_version }} on ${{ matrix.os_short }}
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
@@ -26,17 +26,17 @@ jobs:
           - windows-latest
 
         sm_version:
-          - "1.11"
+          - "1.12"
 
         mm_version:
-          - "1.11"
+          - "1.12"
 
         include:
-          - mm_version: "1.11"
-            mm_branch: "1.11-dev"
+          - mm_version: "1.12"
+            mm_branch: "master"
 
-          - sm_version: "1.11"
-            sm_branch: "1.11-dev"
+          - sm_version: "1.12"
+            sm_branch: "master"
 
           - os: ubuntu-20.04
             os_short: linux
@@ -123,10 +123,10 @@ jobs:
       - name: Checking out own repository
         uses: actions/checkout@v2
         with:
-          path: isb
+          path: improved-survivor-bots
 
       - name: Compiling Extension files
-        working-directory: isb
+        working-directory: improved-survivor-bots
         run: |
           mkdir build
           cd build
@@ -136,5 +136,5 @@ jobs:
       - name: Uploading package
         uses: actions/upload-artifact@v2
         with:
-          name: ISB-${{ matrix.team_size }}players-sm${{ matrix.sm_version }}-${{ matrix.os_short }}-${{ env.GITHUB_SHA_SHORT }}
-          path: ISB/build/package
+          name: Improved-Survivor-Bots-mm${{ matrix.mm_version }}-sm${{ matrix.sm_version }}-${{ matrix.os_short }}-${{ env.GITHUB_SHA_SHORT }}
+          path: Improved-Survivor-Bots/build/package
