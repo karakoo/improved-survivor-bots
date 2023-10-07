@@ -1465,7 +1465,7 @@ ActionResult< SurvivorBot > CImprovedSurvivorBots::Hook_SurvivorDispatchEnemy_On
 // Currently causes a server crash on windows
 #if !defined _WIN32
 	// Fix issue where bots would still move around while saving another survivor from Charger
-	pSurvivorBot->GetIntentionInterface()->PushLegsStack(new SurvivorLegsWait());
+	pSurvivorBot->GetIntentionInterface()->PushLegsStack(new SurvivorLegsWait(0.0f));
 #endif
 
 	RETURN_META_VALUE(MRES_IGNORED, pAction->Continue());
