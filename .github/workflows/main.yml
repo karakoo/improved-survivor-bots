@@ -13,6 +13,8 @@ on:
       - README.md
   schedule:
     - cron: '30 03 01 */3 *' # Artifacts expire every 3 months
+  # Manual triggers with workflow_dispatch
+  workflow_dispatch:
 
 jobs:
   build:
@@ -26,23 +28,23 @@ jobs:
           - windows-latest
 
         sm_version:
-          - "1.12"
+          - "1.11"
 
         mm_version:
-          - "1.12"
+          - "1.11"
 
         include:
-          - mm_version: "1.12"
+          - mm_version: "1.11"
             mm_branch: "master"
 
-          - sm_version: "1.12"
+          - sm_version: "1.11"
             sm_branch: "master"
 
-          - os: ubuntu-20.04
+          - os: ubuntu-22.04
             os_short: linux
 
-          - os: windows-latest
-            os_short: win
+          # - os: windows-latest
+            # os_short: win
 
     steps:
       - name: Prepare env
