@@ -24,7 +24,7 @@ jobs:
       fail-fast: false
       matrix:
         os:
-          - ubuntu-20.04
+          - ubuntu-22.04
           - windows-latest
 
         sm_version:
@@ -43,8 +43,8 @@ jobs:
           - os: ubuntu-22.04
             os_short: linux
 
-          # - os: windows-latest
-            # os_short: win
+          - os: windows-latest
+            os_short: win
 
     steps:
       - name: Prepare env
@@ -80,7 +80,7 @@ jobs:
           )
 
       - name: Checking out SourceMod
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           repository: alliedmodders/sourcemod
           ref: ${{ matrix.sm_branch }}
@@ -88,14 +88,14 @@ jobs:
           submodules: recursive
 
       - name: Checking out MM:Source
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           repository: alliedmodders/metamod-source
           ref: ${{ matrix.mm_branch }}
           path: metamod-${{ matrix.mm_version }}
 
       - name: Checking out AMBuild
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           repository: alliedmodders/ambuild
           path: ambuild
@@ -112,20 +112,20 @@ jobs:
         run: python setup.py install
 
       - name: Checking out hl2sdk-l4d2
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           repository: alliedmodders/hl2sdk
           ref: l4d2
           path: hl2sdk-l4d2
 
       - name: Checking out Imatchext
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           repository: shqke/imatchext
           path: imatchext
 
       - name: Checking out own repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           path: improved-survivor-bots
 
